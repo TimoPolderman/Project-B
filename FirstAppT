@@ -19,12 +19,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText num1 = (EditText) findViewById(R.id.firstNumEditText);
-                EditText num2 = (EditText) findViewById(R.id.secNumbEditText);
+                EditText num5 = (EditText) findViewById(R.id.secNumbEditText);
                 TextView Result = (TextView)findViewById(R.id.resultTextVieuw);
 
                 int numb1 = Integer.parseInt(num1.getText().toString());
                 int numb2 = Integer.parseInt(num2.getText().toString());
-                int result = numb1 + numb2 ;
+                int result = numb1 + numb5 ;
                 Result.setText(result+"");
             }
         });
