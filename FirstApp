@@ -18,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText eersteNum = (EditText) findViewById(R.id.eersteNum);
+                EditText firstNum = (EditText) findViewById(R.id.eersteNum);
                 EditText tweedeNum = (EditText) findViewById(R.id.tweedeNum);
                 TextView Resultt = (TextView) findViewById(R.id.result);
 
-                int num1 = Integer.parseInt(eersteNum.getText().toString());
+                int num1 = Integer.parseInt(firstNum.getText().toString());
                 int num2 = Integer.parseInt(tweedeNum.getText().toString());
                 int result = num1+num2;
                 Resultt.setText(result + "");
