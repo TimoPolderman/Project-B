@@ -1,0 +1,37 @@
+             String name = nameEdit.getText().toString();
+             String email = emailEdit.getText().toString();
+             String phone = phoneEdit.getText().toString();
+             String question = questionEdit.getText().toString();
+                if (TextUtils.isEmpty(name)){
+                    nameEdit.setError("Enter a name");
+                    nameEdit.requestFocus();
+                    return;
+                }
+                Boolean onError = false;
+                if (!isValidEmail(email)){
+                    onError = true;
+                    emailEdit.setError("Invalid email adress");
+                    return;
+                }
+                if (TextUtils.isEmpty(phone)){
+                    phoneEdit.setError("Enter a phone number");
+                    phoneEdit.requestFocus();
+                    return;
+                }
+                if (TextUtils.isEmpty(question)){
+                    questionEdit.setError("Enter a question");
+                    questionEdit.requestFocus();
+                    return;
+                }
+
+                Intent sendEmail = new Intent(android.content.Intent.ACTION_SEND);
+
+                
+                sendEmail.setType("plain/text");
+                sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"timopolderman@gmail.com"});
+                sendEmail.putExtra(android.content.Intent.EXTRA_SUBJECT, phone);
+                sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
+                        "name:"+name+'\n'+"Email ID:"+email+'\n'+"Message:"+'\n'+question);
+
+
+                startActivity(Intent.createChooser(sendEmail, "Send mail..."));
